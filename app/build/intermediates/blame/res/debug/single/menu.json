@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\git\\iliubei-android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_login.xml",
+        "source": "D:\\git\\iliubei-android\\app\\src\\main\\res\\menu\\menu_login.xml"
+    },
+    {
+        "merged": "D:\\git\\iliubei-android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_article_content.xml",
+        "source": "D:\\git\\iliubei-android\\app\\src\\main\\res\\menu\\menu_article_content.xml"
+    },
+    {
+        "merged": "D:\\git\\iliubei-android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
+        "source": "D:\\git\\iliubei-android\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "D:\\git\\iliubei-android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_theme.xml",
+        "source": "D:\\git\\iliubei-android\\app\\src\\main\\res\\menu\\menu_theme.xml"
+    }
+]
