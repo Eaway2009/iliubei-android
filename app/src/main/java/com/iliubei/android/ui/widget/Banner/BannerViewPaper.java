@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
- * Created by yiyi on 2017/1/9.
+ * Created by eaway on 2017/1/9.
  */
 
 public class BannerViewPaper extends ViewPager {

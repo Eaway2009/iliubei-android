@@ -5,7 +5,7 @@ import com.iliubei.android.ui.drawer.DisplaybleItem;
 import java.util.List;
 
 /**
- * Created by yiyi on 2016/12/27.
+ * Created by eaway on 2016/12/27.
  */
 
 public class ThemesEntity {
@@ -14,7 +14,7 @@ public class ThemesEntity {
     /**
      * limit : 1000
      * subscribed : []
-     * others : [{"color":8307764,"thumbnail":"http://pic4.zhimg.com/2c38a96e84b5cc8331a901920a87ea71.jpg","description":"内容由知乎用户推荐，海纳主题百万，趣味上天入地","id":12,"name":"用户推荐日报"},"..."]
+     * others : [{"color":8307764,"thumbnail":"http://pic4.zhimg.com/2c38a96e84b5cc8331a901920a87ea71.jpg","description":"内容由iliubei推荐，海纳主题百万，趣味上天入地","id":12,"name":"用户推荐"},"..."]
      */
 
     private int limit;
@@ -49,9 +49,9 @@ public class ThemesEntity {
         /**
          * color : 8307764
          * thumbnail : http://pic4.zhimg.com/2c38a96e84b5cc8331a901920a87ea71.jpg
-         * description : 内容由知乎用户推荐，海纳主题百万，趣味上天入地
+         * description : 内容由iliubei推荐，海纳主题百万，趣味上天入地
          * id : 12
-         * name : 用户推荐日报
+         * name : 用户推荐
          */
 
         private int color;

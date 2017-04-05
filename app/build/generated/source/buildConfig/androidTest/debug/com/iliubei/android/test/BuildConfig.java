@@ -11,6 +11,5 @@ public final class BuildConfig {
   public static final int VERSION_CODE = 1;
   public static final String VERSION_NAME = "1.0";
   // Fields from default config.
-  public static final String API_BASE_URL = "http://news-at.zhihu.com/api/4/";
-  public static final String API_BASE_URL1 = "http://m.iliubei.com/api/";
+  public static final String API_BASE_URL = "http://m.iliubei.com/api/";
 }

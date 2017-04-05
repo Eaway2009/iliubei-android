@@ -1,7 +1,7 @@
 package com.iliubei.android.common;
 
 /**
- * Created by yiyi on 2016/12/26.
+ * Created by eaway on 2016/12/26.
  */
 
 public interface BaseFuncIml {

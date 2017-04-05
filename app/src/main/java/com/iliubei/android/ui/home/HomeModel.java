@@ -5,7 +5,6 @@ import com.iliubei.android.entity.commonEntity.BeforeDailyEntity;
 import com.iliubei.android.entity.commonEntity.LatestDailyEntity;
 import com.iliubei.android.entity.themeDaily.ThemeContentListEntity;
 import com.iliubei.android.mvpframe.rx.RxSchedulerHelper;
-import com.iliubei.android.ui.home.HomeContract;
 
 import rx.Observable;
 
@@ -17,13 +16,13 @@ public class HomeModel implements HomeContract.Model {
 
     @Override
     public Observable<LatestDailyEntity> getLatestDaily() {
-        return Networks.getInstance().getCommonApi1().getLatestDaily1()
+        return Networks.getInstance().getCommonApi().getLatestDaily1()
                 .compose(RxSchedulerHelper.<LatestDailyEntity>io_main());
     }
 
     @Override
     public Observable<BeforeDailyEntity> getBeforeDaily(String date) {
-        return Networks.getInstance().getCommonApi1().getBeforeDaily(date)
+        return Networks.getInstance().getCommonApi().getBeforeDaily(date)
                 .compose(RxSchedulerHelper.<BeforeDailyEntity>io_main());
     }
 

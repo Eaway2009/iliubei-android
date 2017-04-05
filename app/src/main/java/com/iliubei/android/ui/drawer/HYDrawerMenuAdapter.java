@@ -17,7 +17,7 @@ import com.zhy.adapter.recyclerview.base.ViewHolder;
 import java.util.List;
 
 /**
- * Created by yiyi on 2016/12/29.
+ * Created by eaway on 2016/12/29.
  */
 
 public class HYDrawerMenuAdapter extends MultiItemTypeAdapter<DisplaybleItem> {

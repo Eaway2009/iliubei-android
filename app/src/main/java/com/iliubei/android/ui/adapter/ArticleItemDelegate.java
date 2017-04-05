@@ -15,7 +15,7 @@ import com.zhy.adapter.recyclerview.base.ItemViewDelegate;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
 /**
- * Created by yiyi on 2017/1/6.
+ * Created by eaway on 2017/1/6.
  */
 
 public class ArticleItemDelegate implements ItemViewDelegate<DisplaybleItem> {

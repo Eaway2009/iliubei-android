@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     
-    <color name="colorLightBlue">#0099FF</color>
+    <color name="colorLightBlue">#C01E2F</color>
     <color name="colorLightGray">#E0E0E0</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorDarkGray">#7E736B</color>
@@ -13,8 +13,8 @@
     <color name="colorSplashBackground">#17181A</color>
     <color name="colorDefination">#00FFFF</color>
     
-    <color name="colorDayPrimary">#00A2ED</color>
-    <color name="colorDayPrimaryDark">#008FD2</color>
+    <color name="colorDayPrimary">#C01E2F</color>
+    <color name="colorDayPrimaryDark">#73121C</color>
     <color name="colorDayAccent">#008FD2</color>
     <color name="colorDayWindowBackground">#F3F3F3</color>
     <color name="colorDayCardView">@color/colorWhite</color>

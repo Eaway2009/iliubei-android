@@ -14,7 +14,7 @@ import com.iliubei.android.util.ThemeUtil;
 import com.iliubei.android.util.ToastUtils;
 
 /**
- * Created by yiyi on 2016/12/26.
+ * Created by eaway on 2016/12/26.
  */
 
 public class BaseActivity extends AppCompatActivity implements BaseFuncIml, View.OnClickListener{

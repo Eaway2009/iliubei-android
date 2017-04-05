@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by yiyi on 2017/1/4.
+ * Created by eaway on 2017/1/4.
  */
 
 public class Banner extends FrameLayout implements ViewPager.OnPageChangeListener {

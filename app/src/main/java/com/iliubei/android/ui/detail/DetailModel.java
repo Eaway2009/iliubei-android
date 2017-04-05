@@ -13,7 +13,7 @@ import rx.Observable;
 public class DetailModel implements DetailContract.Model {
     @Override
     public Observable<StoryContentEntity> getStoryContent(long id) {
-        return Networks.getInstance().getCommonApi1()
+        return Networks.getInstance().getCommonApi()
                 .getStoryContent1(id+"")
                 .compose(RxSchedulerHelper.<StoryContentEntity>io_main());
     }

@@ -12,7 +12,7 @@ import retrofit2.http.Query;
 import rx.Observable;
 
 /**
- * Created by yiyi on 2016/12/27.
+ * Created by eaway on 2016/12/27.
  */
 
 public interface CommonApi {

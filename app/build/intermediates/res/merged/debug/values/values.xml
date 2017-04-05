@@ -53,11 +53,11 @@
     <color name="colorDayNavMenuSel">@color/colorLightGray</color>
     <color name="colorDayNavMenuText">@color/colorWhite</color>
     <color name="colorDayNavMenuUnsel">@color/colorWhite</color>
-    <color name="colorDayPrimary">#00A2ED</color>
-    <color name="colorDayPrimaryDark">#008FD2</color>
+    <color name="colorDayPrimary">#C01E2F</color>
+    <color name="colorDayPrimaryDark">#73121C</color>
     <color name="colorDayWindowBackground">#F3F3F3</color>
     <color name="colorDefination">#00FFFF</color>
-    <color name="colorLightBlue">#0099FF</color>
+    <color name="colorLightBlue">#C01E2F</color>
     <color name="colorLightGray">#E0E0E0</color>
     <color name="colorNightAccent">#1E1E1E</color>
     <color name="colorNightCardView">#404040</color>
@@ -700,12 +700,12 @@
     <string name="action_share">分享</string>
     <string name="action_switch_day">日间模式</string>
     <string name="action_switch_night">夜间模式</string>
-    <string name="action_theme_addOrRemove">关注主题日报</string>
+    <string name="action_theme_addOrRemove">关注主题</string>
     <string name="app_name">iliubei</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
-    <string name="defination">知乎日报不会未经同意通过你的微博账号发布任何信息</string>
+    <string name="defination">iliubei不会未经同意通过你的微博账号发布任何信息</string>
     <string name="editor_in_chief">主编</string>
     <string name="login_with_weibo">使用微博登录</string>
     <string name="search_menu_title">Search</string>

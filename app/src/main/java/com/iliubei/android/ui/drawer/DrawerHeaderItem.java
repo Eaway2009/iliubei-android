@@ -1,7 +1,7 @@
 package com.iliubei.android.ui.drawer;
 
 /**
- * Created by yiyi on 2016/12/29.
+ * Created by eaway on 2016/12/29.
  */
 
 public class DrawerHeaderItem implements DisplaybleItem{

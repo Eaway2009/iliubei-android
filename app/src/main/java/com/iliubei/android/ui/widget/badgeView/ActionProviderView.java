@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.iliubei.android.R;
 
 /**
- * Created by yiyi on 17/1/17.
+ * Created by eaway on 17/1/17.
  */
 
 public class ActionProviderView extends ActionProvider {

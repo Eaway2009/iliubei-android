@@ -3,7 +3,7 @@ package com.iliubei.android.util;
 import java.util.List;
 
 /**
- * Created by yiyi on 2017/1/13.
+ * Created by eaway on 2017/1/13.
  */
 
 public class HtmlUtil {

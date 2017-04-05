@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "25"
     defaultConfig {
         applicationId "com.iliubei.android"
         minSdkVersion 14
@@ -12,7 +12,6 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "API_BASE_URL", "\"${API_BASE_URL}\"")
-        buildConfigField("String", "API_BASE_URL1", "\"${API_BASE_URL1}\"")
     }
     buildTypes {
         release {

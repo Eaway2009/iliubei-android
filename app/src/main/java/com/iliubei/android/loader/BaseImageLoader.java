@@ -5,7 +5,7 @@ import android.widget.ImageView;
 
 
 /**
- * Created by yiyi on 17/1/17.
+ * Created by eaway on 17/1/17.
  */
 
 public abstract class BaseImageLoader implements ImageLoaderInterface<ImageView> {

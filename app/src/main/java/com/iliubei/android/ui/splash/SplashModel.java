@@ -14,7 +14,7 @@ public class SplashModel implements SplashContract.Model{
     @Override
     public Observable<SplashImgEntity> getSplahImg() {
         return Networks.getInstance().
-                getCommonApi1().
+                getCommonApi().
                 getSplashImg().
                 compose(RxSchedulerHelper.<SplashImgEntity>io_main());
 

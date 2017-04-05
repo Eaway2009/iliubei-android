@@ -6,7 +6,7 @@ import com.zhy.adapter.recyclerview.base.ItemViewDelegate;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
 /**
- * Created by yiyi on 2016/12/29.
+ * Created by eaway on 2016/12/29.
  */
 
 public class DrawerContentItemDelegate implements ItemViewDelegate<DisplaybleItem>{

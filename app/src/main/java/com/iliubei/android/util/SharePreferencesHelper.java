@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 /**
  * 自封装的SharedPreferences使用帮助类
- * Created by yiyi on 2016/12/28.
+ * Created by eaway on 2016/12/28.
  */
 
 public class SharePreferencesHelper {
