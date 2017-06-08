@@ -14,7 +14,7 @@ import rx.Observable;
 public interface DrawerMainContract {
 
     interface Model extends BaseModel {
-        Observable<ThemesEntity> getOtherThemeList();
+        Observable<ThemesEntity> getCategorys();
     }
 
     interface View extends BaseView {

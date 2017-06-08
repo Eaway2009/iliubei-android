@@ -42,12 +42,6 @@ public class ArticleItemDelegate implements ItemViewDelegate<DisplaybleItem> {
             //Glide.with(holder.getConvertView().getContext()).load(storiesEntity.getImages().get(0)).into(stroyImg);
             GlideImageLoader.getInstance().displayImage(context, storiesEntity.getImg(), stroyImg);
 
-            if (!TextUtils.isEmpty(storiesEntity.getImg())) {
-                holder.getView(R.id.multi_pic_iv).setVisibility(View.VISIBLE);
-            } else {
-                holder.getView(R.id.multi_pic_iv).setVisibility(View.GONE);
-            }
-
             holder.getView(R.id.story_frame_iv).setVisibility(View.VISIBLE);
         } else {
             holder.getView(R.id.story_frame_iv).setVisibility(View.GONE);

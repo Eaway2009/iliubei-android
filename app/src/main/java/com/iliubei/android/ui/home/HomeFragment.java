@@ -10,6 +10,7 @@ import android.view.View;
 import com.iliubei.android.R;
 import com.iliubei.android.entity.commonEntity.BeforeDailyEntity;
 import com.iliubei.android.entity.commonEntity.LatestDailyEntity;
+import com.iliubei.android.entity.themeDaily.ArticleListEntity;
 import com.iliubei.android.entity.themeDaily.ThemeContentListEntity;
 import com.iliubei.android.global.Constants;
 import com.iliubei.android.mvpframe.base.BaseFrameFragment;
@@ -95,7 +96,7 @@ public class HomeFragment extends BaseFrameFragment<HomePresenter, HomeModel> im
         if (TYPE.equals(Constants.StoryType.STORY_HOME)) {
             mPresenter.getLatestDaily();
         } else {
-            mPresenter.getOtherThemeList(themeId);
+//            mPresenter.getOtherThemeList(themeId, 1);
         }
     }
 
@@ -109,11 +110,11 @@ public class HomeFragment extends BaseFrameFragment<HomePresenter, HomeModel> im
             mArticleList.add(new HomeHeaderItem(latestDailyEntity.getBanner()));
             mArticleList.addAll(latestDailyEntity.getAllPager());
         } else {
-            ThemeContentListEntity themeContentListEntity = (ThemeContentListEntity)t;
+            ArticleListEntity themeContentListEntity = (ArticleListEntity)t;
 
-            mArticleList.add(new ThemeHeaderItem(themeContentListEntity.getImage(), themeContentListEntity.getDescription()));
-            mArticleList.add(new ThemeSectionItem(themeContentListEntity.getEditors()));
-            mArticleList.addAll(themeContentListEntity.getStories());
+//            mArticleList.add(new ThemeHeaderItem(themeContentListEntity.getImage(), themeContentListEntity.getDescription()));
+//            mArticleList.add(new ThemeSectionItem(themeContentListEntity.getEditors()));
+            mArticleList.addAll(themeContentListEntity.getArticles());
         }
 
         mArticleListAdapter.notifyDataSetChanged();
@@ -123,11 +124,11 @@ public class HomeFragment extends BaseFrameFragment<HomePresenter, HomeModel> im
 
     @Override
     public void loadBeforeDaily(BeforeDailyEntity beforeDailyEntity) {
-//        mdate = beforeDailyEntity.getDate();
-//
-//        mArticleList.add(new HomeSectionItem(mdate));
-//        mArticleList.addAll(beforeDailyEntity.getStories());
-//        mArticleListAdapter.notifyDataSetChanged();
+        mdate = beforeDailyEntity.getDate();
+
+        mArticleList.add(new HomeSectionItem(mdate));
+        mArticleList.addAll(beforeDailyEntity.getStories());
+        mArticleListAdapter.notifyDataSetChanged();
     }
 
 }

@@ -1,6 +1,7 @@
 package com.iliubei.android.ui.home;
 
 import com.iliubei.android.entity.commonEntity.LatestDailyEntity;
+import com.iliubei.android.entity.themeDaily.ArticleListEntity;
 import com.iliubei.android.entity.themeDaily.ThemeContentListEntity;
 import com.iliubei.android.ui.home.HomeContract;
 
@@ -39,9 +40,9 @@ public class HomePresenter extends HomeContract.Presenter {
     }
 
     @Override
-    void getOtherThemeList(int id) {
-        mRxManager.add(mModel.getThemeContentList(id)
-        .subscribe(new Subscriber<ThemeContentListEntity>() {
+    void getOtherThemeList(int id, int page) {
+        mRxManager.add(mModel.getThemeContentList(id, page)
+        .subscribe(new Subscriber<ArticleListEntity>() {
             @Override
             public void onCompleted() {
 
@@ -53,8 +54,8 @@ public class HomePresenter extends HomeContract.Presenter {
             }
 
             @Override
-            public void onNext(ThemeContentListEntity themeContentListEntity) {
-                mView.refreshHomeList(themeContentListEntity);
+            public void onNext(ArticleListEntity articleListEntity) {
+                mView.refreshHomeList(articleListEntity);
             }
         }));
     }

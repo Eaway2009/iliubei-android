@@ -1,6 +1,7 @@
 package com.iliubei.android.ui.drawer;
 
 import com.iliubei.android.R;
+import com.iliubei.android.entity.commonEntity.CategoryEntity;
 import com.iliubei.android.entity.themeDaily.ThemesEntity;
 import com.zhy.adapter.recyclerview.base.ItemViewDelegate;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -18,12 +19,12 @@ public class DrawerContentItemDelegate implements ItemViewDelegate<DisplaybleIte
 
     @Override
     public boolean isForViewType(DisplaybleItem item, int position) {
-        return item instanceof ThemesEntity.OthersEntity;
+        return item instanceof CategoryEntity;
     }
 
     @Override
     public void convert(ViewHolder holder, DisplaybleItem displaybleItem, final int position) {
-        holder.setText(R.id.item_theme_list_tv, ((ThemesEntity.OthersEntity)displaybleItem).getName());
+        holder.setText(R.id.item_theme_list_tv, ((CategoryEntity)displaybleItem).getName());
     }
 
 }

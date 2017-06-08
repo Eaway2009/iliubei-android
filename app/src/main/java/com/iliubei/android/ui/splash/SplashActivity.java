@@ -55,9 +55,7 @@ import rx.Subscriber;
     @Override
     public void onRequestEnd() {
         Observable.timer(2000, TimeUnit.MILLISECONDS)
-                .compose(RxPermissions.getInstance(this).ensureEach(Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_EXTERNAL_STORAGE))
-                .compose(RxSchedulerHelper.<Permission>io_main())
-                .subscribe(new Subscriber<Permission>() {
+                .subscribe(new Subscriber<Long>() {
                     @Override
                     public void onCompleted() {
 
@@ -69,12 +67,12 @@ import rx.Subscriber;
                     }
 
                     @Override
-                    public void onNext(Permission permission) {
-                        if (permission.granted) {
+                    public void onNext(Long permission) {
+//                        if (permission.granted) {
                             Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
-                        }
+//                        }
                     }
                 });
     }

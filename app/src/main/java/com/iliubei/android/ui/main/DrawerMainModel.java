@@ -12,9 +12,9 @@ import rx.Observable;
 
 public class DrawerMainModel implements DrawerMainContract.Model{
     @Override
-    public Observable<ThemesEntity> getOtherThemeList() {
-        return Networks.getInstance().getThemeApi().
-                getThemes()
+    public Observable<ThemesEntity> getCategorys() {
+        return Networks.getInstance().getThemeApi()
+                .getCategorys()
                 .compose(RxSchedulerHelper.<ThemesEntity>io_main());
     }
 }

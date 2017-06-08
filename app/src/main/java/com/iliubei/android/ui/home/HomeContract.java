@@ -2,6 +2,7 @@ package com.iliubei.android.ui.home;
 
 import com.iliubei.android.entity.commonEntity.BeforeDailyEntity;
 import com.iliubei.android.entity.commonEntity.LatestDailyEntity;
+import com.iliubei.android.entity.themeDaily.ArticleListEntity;
 import com.iliubei.android.entity.themeDaily.ThemeContentListEntity;
 import com.iliubei.android.mvpframe.base.BaseModel;
 import com.iliubei.android.mvpframe.base.BasePresenter;
@@ -20,7 +21,7 @@ public interface HomeContract {
 
         Observable<BeforeDailyEntity> getBeforeDaily(String date);
 
-        Observable<ThemeContentListEntity> getThemeContentList(int id);
+        Observable<ArticleListEntity> getThemeContentList(int id, int page);
     }
 
     interface View extends BaseView {
@@ -34,6 +35,6 @@ public interface HomeContract {
 
         abstract void getBeforeDaily(String date);
 
-        abstract void getOtherThemeList(int id);
+        abstract void getOtherThemeList(int id, int page);
     }
 }

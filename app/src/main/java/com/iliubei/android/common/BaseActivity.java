@@ -96,7 +96,7 @@ public class BaseActivity extends AppCompatActivity implements BaseFuncIml, View
        this.mCurrFragment = currFragment;
     }
 
-    protected void toFragment(Fragment toFragment) {
+    protected void toFragment(int id, Fragment toFragment) {
         if (mCurrFragment == null) {
             ToastUtils.showToast(this, "mCurrFragment is null");
             return;
@@ -112,6 +112,7 @@ public class BaseActivity extends AppCompatActivity implements BaseFuncIml, View
                     .beginTransaction()
                     .hide(mCurrFragment)
                     .show(toFragment)
+                    .replace(id, toFragment)
                     .commit();
         } else {
             getSupportFragmentManager()

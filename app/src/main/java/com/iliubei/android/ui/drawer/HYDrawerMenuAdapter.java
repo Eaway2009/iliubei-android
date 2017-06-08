@@ -76,18 +76,6 @@ public class HYDrawerMenuAdapter extends MultiItemTypeAdapter<DisplaybleItem> {
                     }
                 });
 
-                if (viewType == Constants.DrawerMenuItemType.ITEM_DRAWER_MENU_CONTENT) {
-                    viewHolder.getView(R.id.follow_iv).setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if (mOnItemClickListener != null) {
-                                int position = viewHolder.getAdapterPosition();
-                                mOnItemClickListener.onFollowIVClick(view, viewHolder, position, offset);
-                            }
-                        }
-                    });
-                }
-
                 break;
         }
 

@@ -1,103 +1,45 @@
 package com.iliubei.android.entity.themeDaily;
 
+import com.iliubei.android.entity.commonEntity.CategoryEntity;
 import com.iliubei.android.ui.drawer.DisplaybleItem;
 
 import java.util.List;
+import java.util.Map;
 
 /**
+ * {
+ *  "errcode": 0,
+ *  "categorys": {
+ * "1": "院线大片",
+ * "25": "伦理电影",
+ * "31": "豆瓣电影",
+ * "32": "擦边电影"
+ * },
+ * "errmsg": ""
+ * }
+ *
  * Created by eaway on 2016/12/27.
  */
 
 public class ThemesEntity {
 
+    private int errcode;
+    private List<CategoryEntity> categorys;
 
-    /**
-     * limit : 1000
-     * subscribed : []
-     * others : [{"color":8307764,"thumbnail":"http://pic4.zhimg.com/2c38a96e84b5cc8331a901920a87ea71.jpg","description":"内容由iliubei推荐，海纳主题百万，趣味上天入地","id":12,"name":"用户推荐"},"..."]
-     */
-
-    private int limit;
-    private List<?> subscribed;
-    private List<OthersEntity> others;
-
-    public int getLimit() {
-        return limit;
+    public int getErrcode() {
+        return errcode;
     }
 
-    public void setLimit(int limit) {
-        this.limit = limit;
+    public void setErrcode(int errcode) {
+        this.errcode = errcode;
     }
 
-    public List<?> getSubscribed() {
-        return subscribed;
+    public List<CategoryEntity> getCategorys() {
+        return categorys;
     }
 
-    public void setSubscribed(List<?> subscribed) {
-        this.subscribed = subscribed;
+    public void setCategorys(List<CategoryEntity> categorys) {
+        this.categorys = categorys;
     }
 
-    public List<OthersEntity> getOthers() {
-        return others;
-    }
-
-    public void setOthers(List<OthersEntity> others) {
-        this.others = others;
-    }
-
-    public static class OthersEntity implements DisplaybleItem{
-        /**
-         * color : 8307764
-         * thumbnail : http://pic4.zhimg.com/2c38a96e84b5cc8331a901920a87ea71.jpg
-         * description : 内容由iliubei推荐，海纳主题百万，趣味上天入地
-         * id : 12
-         * name : 用户推荐
-         */
-
-        private int color;
-        private String thumbnail;
-        private String description;
-        private int id;
-        private String name;
-
-        public int getColor() {
-            return color;
-        }
-
-        public void setColor(int color) {
-            this.color = color;
-        }
-
-        public String getThumbnail() {
-            return thumbnail;
-        }
-
-        public void setThumbnail(String thumbnail) {
-            this.thumbnail = thumbnail;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-    }
 }

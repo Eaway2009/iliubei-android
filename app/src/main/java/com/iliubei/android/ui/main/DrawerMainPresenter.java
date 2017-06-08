@@ -17,7 +17,7 @@ public class DrawerMainPresenter extends DrawerMainContract.Presenter{
     @Override
     void getOtherThemes() {
         mRxManager.add(mModel
-                .getOtherThemeList()
+                .getCategorys()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<ThemesEntity>() {

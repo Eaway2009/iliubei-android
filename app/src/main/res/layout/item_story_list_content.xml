@@ -46,15 +46,6 @@
                 android:scaleType="centerCrop"
                 tools:background="@color/colorLightBlue"/>
 
-            <ImageView
-                android:id="@+id/multi_pic_iv"
-                android:layout_width="@dimen/space_40"
-                android:layout_height="@dimen/space_16"
-                android:src="@drawable/home_pic"
-                android:scaleType="centerCrop"
-                android:layout_gravity="bottom|right"
-                android:visibility="invisible"
-                tools:visibility="visible"/>
         </FrameLayout>
 
 

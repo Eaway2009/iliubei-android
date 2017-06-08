@@ -1,10 +1,12 @@
 package com.iliubei.android.api;
 
+import com.iliubei.android.entity.themeDaily.ArticleListEntity;
 import com.iliubei.android.entity.themeDaily.ThemeContentListEntity;
 import com.iliubei.android.entity.themeDaily.ThemesEntity;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -13,16 +15,17 @@ import rx.Observable;
 
 public interface ThemeApi {
     /**
-     * 获取主题列表theme
+     * 获取分类列表
      */
-    @GET("themes")
-    Observable<ThemesEntity> getThemes();
+    @GET("article/listCategorys")
+    Observable<ThemesEntity> getCategorys();
 
     /**
      * 获取主题内容列表
-     * @param themeId 主题id
+     * @param typeid 分类id
+     * @param page 第几页
      */
-    @GET("theme/{themeId}")
-    Observable<ThemeContentListEntity> getThemeContentList(@Path("themeId") int themeId);
+    @GET("article/getArticleByTypeid")
+    Observable<ArticleListEntity> getThemeContentList(@Query("typeid") int typeid, @Query("page") int page);
 
 }

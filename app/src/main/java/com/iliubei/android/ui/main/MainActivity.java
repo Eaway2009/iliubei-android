@@ -8,12 +8,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.iliubei.android.R;
+import com.iliubei.android.entity.commonEntity.CategoryEntity;
 import com.iliubei.android.entity.themeDaily.ThemesEntity;
 import com.iliubei.android.global.Constants;
 import com.iliubei.android.mvpframe.base.BaseFrameActivity;
@@ -22,6 +24,7 @@ import com.iliubei.android.ui.drawer.DrawerHeaderItem;
 import com.iliubei.android.ui.drawer.DrawerHomeItem;
 import com.iliubei.android.ui.drawer.HYDrawerMenuAdapter;
 import com.iliubei.android.ui.home.HomeFragment;
+import com.iliubei.android.ui.list.ListFragment;
 import com.iliubei.android.ui.login.LoginAcitivity;
 import com.iliubei.android.util.ToastUtils;
 
@@ -54,6 +57,10 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
     private Context mContext;
 
     private HomeFragment mCommonFragment;
+    private ListFragment mListFragment;
+
+    private static final int FRAGMENT_HOME = 1;
+    private static final int FRAGMENT_LIST = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +69,6 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
         ButterKnife.bind(this);
         mContext = this;
 
-        setFragmentId(R.id.container);
         setExit(true);
     }
 
@@ -77,6 +83,7 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
         mMenuAdapter = new HYDrawerMenuAdapter(mContext, mMainMenuList);
 
         mCommonFragment = new HomeFragment();
+        mListFragment = new ListFragment();
     }
 
     @Override
@@ -87,8 +94,9 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
         mDrawerMenuRC.setLayoutManager(layoutManager);
         mDrawerMenuRC.setAdapter(mMenuAdapter);
 
+        setFragmentId(R.id.container);
         setCurrFragment(mCommonFragment);
-        toFragment(mCommonFragment);
+        toFragment(R.id.container, mCommonFragment);
     }
 
     private void initToolBar() {
@@ -128,15 +136,20 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
     @Override
     public void onItemViewClick(View view, RecyclerView.ViewHolder holder, int position) {
 
-        mMenuAdapter.setSelection(position);
-        mMenuAdapter.notifyDataSetChanged();
-
         // switch articles
         if (position == 1) {
             switchFragment(Constants.StoryType.STORY_HOME, getResources().getString(R.string.topic_list_home), -1);
-        } else  {
-            ThemesEntity.OthersEntity themeEntity = (ThemesEntity.OthersEntity) mMainMenuList.get(position);
-            switchFragment(Constants.StoryType.STORY_THEME, themeEntity.getName(), themeEntity.getId());
+        } else {
+            CategoryEntity themeEntity = (CategoryEntity) mMainMenuList.get(position);
+            if (themeEntity.getTypeid() != null) {
+                int typeId = 0;
+                try {
+                    typeId = Integer.valueOf(themeEntity.getTypeid());
+                } catch (Exception e) {
+                    Log.e(TAG, "getTypeid", e);
+                }
+                switchFragment(Constants.StoryType.STORY_THEME, themeEntity.getName(), typeId);
+            }
         }
 
 
@@ -144,27 +157,34 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
     }
 
     private void switchFragment(String type, String title, int id) {
-        mCommonFragment.TYPE = type;
-        mCommonFragment.themeId = id;
 
         if (type.equals(Constants.StoryType.STORY_HOME)) {
+            mCommonFragment.TYPE = type;
+            mCommonFragment.themeId = id;
             mtoolBar.getMenu().findItem(R.id.action_follow).setVisible(false);
             mtoolBar.getMenu().findItem(R.id.action_notice).setVisible(true);
             mtoolBar.getMenu().findItem(R.id.action_switch_model).setVisible(true);
             mtoolBar.getMenu().findItem(R.id.action_config).setVisible(true);
             mtoolBar.hideOverflowMenu();
+            mtoolBar.setTitle(title);
+
+            toFragment(R.id.container, mCommonFragment);
+            if (mCommonFragment.isAdded()) {
+                mCommonFragment.getData();
+            }
         } else {
+            mListFragment.themeId = id;
             mtoolBar.getMenu().findItem(R.id.action_follow).setVisible(true);
             mtoolBar.getMenu().findItem(R.id.action_notice).setVisible(false);
             mtoolBar.getMenu().findItem(R.id.action_switch_model).setVisible(false);
             mtoolBar.getMenu().findItem(R.id.action_config).setVisible(false);
             mtoolBar.showOverflowMenu();
-        }
-        mtoolBar.setTitle(title);
+            mtoolBar.setTitle(title);
 
-        toFragment(mCommonFragment);
-        if (mCommonFragment.isAdded()) {
-            mCommonFragment.getData();
+            toFragment(R.id.container, mListFragment);
+            if (mListFragment.isAdded()) {
+                mListFragment.getData();
+            }
         }
     }
 
@@ -175,6 +195,7 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
 
     /**
      * ToolBar menu item_story_list_section_head click callback
+     *
      * @param item menu item_story_list_section_head
      * @return
      */
@@ -236,7 +257,7 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
         mMainMenuList.clear();
         mMainMenuList.add(new DrawerHeaderItem());
         mMainMenuList.add(new DrawerHomeItem());
-        mMainMenuList.addAll(themesEntity.getOthers());
+        mMainMenuList.addAll(themesEntity.getCategorys());
         mMenuAdapter.notifyDataSetChanged();
     }
 

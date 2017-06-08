@@ -30,7 +30,6 @@ public class ArticleDetailActivity extends BaseFrameActivity<DetailPresenter, De
 
     private static final String TAG = "ArticleDetailActivity";
 
-
     @BindView(R.id.toolBar)
     Toolbar mToolbar;
     @BindView(R.id.detail_bar_title)
