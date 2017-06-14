@@ -1,10 +1,7 @@
 package com.iliubei.android.ui.home;
 
 import com.iliubei.android.api.Networks;
-import com.iliubei.android.entity.commonEntity.BeforeDailyEntity;
 import com.iliubei.android.entity.commonEntity.LatestDailyEntity;
-import com.iliubei.android.entity.themeDaily.ArticleListEntity;
-import com.iliubei.android.entity.themeDaily.ThemeContentListEntity;
 import com.iliubei.android.mvpframe.rx.RxSchedulerHelper;
 
 import rx.Observable;
@@ -16,20 +13,8 @@ import rx.Observable;
 public class HomeModel implements HomeContract.Model {
 
     @Override
-    public Observable<LatestDailyEntity> getLatestDaily() {
-        return Networks.getInstance().getCommonApi().getLatestDaily1()
+    public Observable<LatestDailyEntity> getIndexPage() {
+        return Networks.getInstance().getCommonApi().getIndexPage()
                 .compose(RxSchedulerHelper.<LatestDailyEntity>io_main());
-    }
-
-    @Override
-    public Observable<BeforeDailyEntity> getBeforeDaily(String date) {
-        return Networks.getInstance().getCommonApi().getBeforeDaily(date)
-                .compose(RxSchedulerHelper.<BeforeDailyEntity>io_main());
-    }
-
-    @Override
-    public Observable<ArticleListEntity> getThemeContentList(int id, int page) {
-        return Networks.getInstance().getThemeApi().getThemeContentList(id, page)
-                .compose(RxSchedulerHelper.<ArticleListEntity>io_main());
     }
 }

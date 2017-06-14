@@ -14,7 +14,7 @@ public class DetailModel implements DetailContract.Model {
     @Override
     public Observable<StoryContentEntity> getStoryContent(long id) {
         return Networks.getInstance().getCommonApi()
-                .getStoryContent1(id+"")
+                .getStoryContent(id+"")
                 .compose(RxSchedulerHelper.<StoryContentEntity>io_main());
     }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<serverurls>
+    <serverurl name="production">
+        <url>http://m.xiaoniu88.com:8077</url>
+        <ssl_url>https://m.xiaoniu88.com:8477</ssl_url>
+        <push_url>ws://apppush.xiaoniu88.com:8090/</push_url>
+    </serverurl>
+    <serverurl name="internal_test_ip84">
+        <url>https://172.20.20.84:8477</url>
+        <ssl_url>https://172.20.20.84:8477</ssl_url>
+        <push_url>ws://172.20.20.208:8081/</push_url>
+    </serverurl>
+</serverurls>

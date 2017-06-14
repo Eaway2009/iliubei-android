@@ -21,8 +21,6 @@ public class Networks {
 
     private static CommonApi mCommonApi;
 
-    private static ThemeApi mThemeApi;
-
     private static Networks mNetworks;
 
     public static Networks getInstance() {
@@ -34,10 +32,6 @@ public class Networks {
 
     public CommonApi getCommonApi() {
         return mCommonApi == null ? configRetrofit(CommonApi.class) : mCommonApi;
-    }
-
-    public ThemeApi getThemeApi() {
-        return mThemeApi == null ? configRetrofit(ThemeApi.class) : mThemeApi;
     }
 
 

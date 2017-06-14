@@ -5,6 +5,8 @@ import com.iliubei.android.entity.commonEntity.LatestDailyEntity;
 import com.iliubei.android.entity.commonEntity.SplashImgEntity;
 import com.iliubei.android.entity.commonEntity.StoryContentEntity;
 import com.iliubei.android.entity.commonEntity.StoryExtraEntity;
+import com.iliubei.android.entity.themeDaily.ArticleListEntity;
+import com.iliubei.android.entity.themeDaily.ThemesEntity;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -24,40 +26,11 @@ public interface CommonApi {
     Observable<SplashImgEntity> getSplashImg();
 
     /**
-     * 获取android最新版本
-     * @return
-     */
-    @GET("version/android/{versionCode}")
-    Observable<SplashImgEntity> getLatestVersion(@Path("versionCode") String versionCode);
-
-    /**
-     * 获取最新文章列表
-     * @return
-     */
-    @GET("news/latest")
-    Observable<LatestDailyEntity> getLatestDaily();
-
-    /**
      * 获取最新文章列表
      * @return
      */
     @GET("index")
-    Observable<LatestDailyEntity> getLatestDaily1();
-
-    /**
-     * 获取以前的文章列表
-     * @return
-     */
-    @GET("news/before/{date}")
-    Observable<BeforeDailyEntity> getBeforeDaily(@Path("date") String date);
-
-    /**
-     * 获取相应文章内容
-     * @param storyId
-     * @return
-     */
-    @GET("news/{storyId}")
-    Observable<StoryContentEntity> getStoryContent(@Path("storyId") long storyId);
+    Observable<LatestDailyEntity> getIndexPage();
 
     /**
      * 获取相应文章内容
@@ -65,13 +38,20 @@ public interface CommonApi {
      * @return
      */
     @GET("article/detail")
-    Observable<StoryContentEntity> getStoryContent1(@Query("aid") String aid);
+    Observable<StoryContentEntity> getStoryContent(@Query("aid") String aid);
+
 
     /**
-     * 获取相应文章的额外信息，如评论数量，获得的赞等
-     * @param storyId
-     * @return
+     * 获取分类列表
      */
-    @GET("story-extra/{storyId}")
-    Observable<StoryExtraEntity> getStoryExtra(@Path("storyId") int storyId);
+    @GET("article/listCategorys")
+    Observable<ThemesEntity> getCategorys();
+
+    /**
+     * 获取主题内容列表
+     * @param typeid 分类id
+     * @param page 第几页
+     */
+    @GET("article/getArticleByTypeid")
+    Observable<ArticleListEntity> getThemeContentList(@Query("typeid") int typeid, @Query("page") int page);
 }

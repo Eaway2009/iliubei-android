@@ -32,11 +32,6 @@ public class ListPresenter extends ListContract.Presenter {
     }
 
     @Override
-    void getBeforeDaily(String date) {
-
-    }
-
-    @Override
     void getOtherThemeList(int id, int page) {
         mRxManager.add(mModel.getThemeContentList(id, page)
                 .subscribe(new Subscriber<ArticleListEntity>() {

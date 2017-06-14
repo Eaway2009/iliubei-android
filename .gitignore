@@ -1,8 +1,14 @@
 *.iml
-/.idea/workspace.xml
-/.idea/libraries
+
+/.idea
+/workspace.xml
+
+/libraries
 .DS_Store
+
 /build
+
 /app/build
+
 /captures
 .externalNativeBuild

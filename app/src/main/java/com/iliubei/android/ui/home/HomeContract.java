@@ -17,24 +17,14 @@ import rx.Observable;
 public interface HomeContract {
 
     interface Model extends BaseModel {
-        Observable<LatestDailyEntity> getLatestDaily();
-
-        Observable<BeforeDailyEntity> getBeforeDaily(String date);
-
-        Observable<ArticleListEntity> getThemeContentList(int id, int page);
+        Observable<LatestDailyEntity> getIndexPage();
     }
 
     interface View extends BaseView {
         <T> void refreshHomeList(T t);
-
-        void loadBeforeDaily(BeforeDailyEntity beforeDailyEntity);
     }
 
     abstract class Presenter extends BasePresenter<Model, View> {
-        abstract void getLatestDaily();
-
-        abstract void getBeforeDaily(String date);
-
-        abstract void getOtherThemeList(int id, int page);
+        abstract void getIndexPage();
     }
 }

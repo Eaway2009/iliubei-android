@@ -59,9 +59,6 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
     private HomeFragment mCommonFragment;
     private ListFragment mListFragment;
 
-    private static final int FRAGMENT_HOME = 1;
-    private static final int FRAGMENT_LIST = 2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -159,7 +156,6 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
     private void switchFragment(String type, String title, int id) {
 
         if (type.equals(Constants.StoryType.STORY_HOME)) {
-            mCommonFragment.TYPE = type;
             mCommonFragment.themeId = id;
             mtoolBar.getMenu().findItem(R.id.action_follow).setVisible(false);
             mtoolBar.getMenu().findItem(R.id.action_notice).setVisible(true);

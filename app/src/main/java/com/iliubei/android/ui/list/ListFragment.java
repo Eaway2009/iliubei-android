@@ -10,6 +10,7 @@ import com.iliubei.android.entity.commonEntity.BeforeDailyEntity;
 import com.iliubei.android.entity.themeDaily.ArticleListEntity;
 import com.iliubei.android.mvpframe.base.BaseFrameFragment;
 import com.iliubei.android.ui.adapter.ArticleListAdapter;
+import com.iliubei.android.ui.widget.LoadMoreListViewWrap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +24,18 @@ import butterknife.ButterKnife;
 
 public class ListFragment extends BaseFrameFragment<ListPresenter, ListModel> implements ListContract.View {
     private static final String TAG = "ListFragment";
+    public int themeId;
+
     @BindView(R.id.recyclerView)
     ListView mRecyclerView;
+
     @BindView(R.id.swipe_layout)
     SwipeRefreshLayout mSwipeRefresh;
 
     private ArticleListAdapter mArticleListAdapter;
+    private LoadMoreListViewWrap mLoadMoreListViewWrap;
 
     private List<ArticleListItemEntity> mArticleList;
-
-    public int themeId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,14 +95,5 @@ public class ListFragment extends BaseFrameFragment<ListPresenter, ListModel> im
         mArticleListAdapter.notifyDataSetChanged();
 
         mSwipeRefresh.setRefreshing(false);
-    }
-
-    @Override
-    public void loadBeforeDaily(BeforeDailyEntity beforeDailyEntity) {
-//        mdate = beforeDailyEntity.getDate();
-//
-//        mArticleList.add(new HomeSectionItem(mdate));
-//        mArticleList.addAll(beforeDailyEntity.getStories());
-//        mArticleListAdapter.notifyDataSetChanged();
     }
 }

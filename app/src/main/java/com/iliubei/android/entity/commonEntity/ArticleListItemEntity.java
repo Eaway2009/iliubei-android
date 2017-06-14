@@ -10,7 +10,7 @@ public class ArticleListItemEntity  implements DisplaybleItem {
     private String img;
     private String sendDate;
     private String title;
-    private int aid;
+    private long aid;
     private String url;
     private String desc;
 
@@ -38,11 +38,11 @@ public class ArticleListItemEntity  implements DisplaybleItem {
         this.title = title;
     }
 
-    public int getAid() {
+    public long getAid() {
         return aid;
     }
 
-    public void setAid(int aid) {
+    public void setAid(long aid) {
         this.aid = aid;
     }
 

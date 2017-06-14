@@ -16,19 +16,13 @@ public class ListModel implements ListContract.Model{
 
     @Override
     public Observable<ArticleListEntity> getLatestDaily(int id) {
-        return Networks.getInstance().getThemeApi().getThemeContentList(id, 1)
+        return Networks.getInstance().getCommonApi().getThemeContentList(id, 1)
                 .compose(RxSchedulerHelper.<ArticleListEntity>io_main());
     }
 
     @Override
-    public Observable<BeforeDailyEntity> getBeforeDaily(String date) {
-        return Networks.getInstance().getCommonApi().getBeforeDaily(date)
-                .compose(RxSchedulerHelper.<BeforeDailyEntity>io_main());
-    }
-
-    @Override
     public Observable<ArticleListEntity> getThemeContentList(int id, int page) {
-        return Networks.getInstance().getThemeApi().getThemeContentList(id, page)
+        return Networks.getInstance().getCommonApi().getThemeContentList(id, page)
                 .compose(RxSchedulerHelper.<ArticleListEntity>io_main());
     }
 }
