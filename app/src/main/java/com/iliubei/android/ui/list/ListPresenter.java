@@ -11,8 +11,8 @@ import rx.Subscriber;
 public class ListPresenter extends ListContract.Presenter {
 
     @Override
-    void getLatestDaily(int id) {
-        mRxManager.add(mModel.getLatestDaily(id)
+    void getLatestArticles(int id) {
+        mRxManager.add(mModel.getLatestArticles(id)
                 .subscribe(new Subscriber<ArticleListEntity>() {
                     @Override
                     public void onCompleted() {
@@ -26,14 +26,14 @@ public class ListPresenter extends ListContract.Presenter {
 
                     @Override
                     public void onNext(ArticleListEntity latestDailyEntity) {
-                        mView.refreshHomeList(latestDailyEntity);
+                        mView.refreshList(latestDailyEntity);
                     }
                 }));
     }
 
     @Override
-    void getOtherThemeList(int id, int page) {
-        mRxManager.add(mModel.getThemeContentList(id, page)
+    void getArticleList(int id, int page) {
+        mRxManager.add(mModel.getArticleList(id, page)
                 .subscribe(new Subscriber<ArticleListEntity>() {
                     @Override
                     public void onCompleted() {
@@ -47,7 +47,7 @@ public class ListPresenter extends ListContract.Presenter {
 
                     @Override
                     public void onNext(ArticleListEntity articleListEntity) {
-                        mView.refreshHomeList(articleListEntity);
+                        mView.loadedList(articleListEntity);
                     }
                 }));
     }

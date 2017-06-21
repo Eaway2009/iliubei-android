@@ -15,18 +15,19 @@ import rx.Observable;
 public interface ListContract {
 
     interface Model extends BaseModel {
-        Observable<ArticleListEntity> getLatestDaily(int id);
+        Observable<ArticleListEntity> getLatestArticles(int id);
 
-        Observable<ArticleListEntity> getThemeContentList(int id, int page);
+        Observable<ArticleListEntity> getArticleList(int id, int page);
     }
 
     interface View extends BaseView {
-        <T> void refreshHomeList(T t);
+        <T> void refreshList(T t);
+        <T> void loadedList(T t);
     }
 
     abstract class Presenter extends BasePresenter<Model, View> {
-        abstract void getLatestDaily(int id);
+        abstract void getLatestArticles(int id);
 
-        abstract void getOtherThemeList(int id, int page);
+        abstract void getArticleList(int id, int page);
     }
 }

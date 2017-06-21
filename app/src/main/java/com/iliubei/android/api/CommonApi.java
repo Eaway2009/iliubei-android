@@ -53,5 +53,5 @@ public interface CommonApi {
      * @param page 第几页
      */
     @GET("article/getArticleByTypeid")
-    Observable<ArticleListEntity> getThemeContentList(@Query("typeid") int typeid, @Query("page") int page);
+    Observable<ArticleListEntity> getArticleList(@Query("typeid") int typeid, @Query("page") int page);
 }

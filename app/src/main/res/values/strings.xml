@@ -24,4 +24,6 @@
     <string name="defination">iliubei不会未经同意通过你的微博账号发布任何信息</string>
 
     <string name="editor_in_chief">主编</string>
+    <string name="list_fragment_last_page">已是最后一页</string>
+    <string name="loading_view_text">正在努力加载数据</string>
 </resources>
