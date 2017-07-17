@@ -8,6 +8,7 @@
         android:id="@+id/action_notice"
         android:icon="@drawable/ic_actionbar_notice"
         android:title="@string/action_notice"
+        android:visible="false"
         app:showAsAction="ifRoom"/>
 
     <item

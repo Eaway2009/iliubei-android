@@ -2,13 +2,14 @@ package com.iliubei.android.ui.detail;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
+import android.widget.Button;
 
 import com.iliubei.android.R;
 import com.iliubei.android.entity.commonEntity.StoryContentEntity;
@@ -32,12 +33,17 @@ public class ArticleDetailActivity extends BaseFrameActivity<DetailPresenter, De
 
     @BindView(R.id.toolBar)
     Toolbar mToolbar;
-    @BindView(R.id.detail_bar_title)
-    TextView detailBarTitle;
-    @BindView(R.id.detail_bar_copyright)
-    TextView detailBarCopyright;
     @BindView(R.id.wv_detail_content)
     WebView detailContentWV;
+
+    @BindView(R.id.download_uri_btn)
+    Button downloadButton;
+
+    private String torrent;
+    private String ciliUrl;
+    private String baiduUrl;
+    private String baiduPwd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +70,8 @@ public class ArticleDetailActivity extends BaseFrameActivity<DetailPresenter, De
         initToolbar();
 
         initWebViewClient();
+
+        downloadButton.setOnClickListener(onClickListener);
     }
 
     private void initToolbar() {
@@ -118,9 +126,30 @@ public class ArticleDetailActivity extends BaseFrameActivity<DetailPresenter, De
     public void showContent(StoryContentEntity storyContentEntity) {
         if (storyContentEntity != null && storyContentEntity.getArticle() != null) {
             mToolbar.setTitle(storyContentEntity.getArticle().getTitle());
-            detailBarTitle.setText(storyContentEntity.getArticle().getTitle());
+            mToolbar.setVisibility(View.VISIBLE);
             detailContentWV.loadData(storyContentEntity.getArticle().getBody(), HtmlUtil.MIME_TYPE, HtmlUtil.ENCODING);
+
+            baiduPwd = storyContentEntity.getArticle().getBdypas();
+            baiduUrl = storyContentEntity.getArticle().getBdyurl();
+            ciliUrl = storyContentEntity.getArticle().getCili();
+            torrent = storyContentEntity.getArticle().getZhongzi();
         }
     }
+
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.download_uri_btn:
+                    Intent intent = new Intent(ArticleDetailActivity.this, DownloadActivity.class);
+                    intent.putExtra("baidu_pwd", baiduPwd);
+                    intent.putExtra("baidu_url", baiduUrl);
+                    intent.putExtra("cili_url", ciliUrl);
+                    intent.putExtra("torrent", torrent);
+                    ArticleDetailActivity.this.startActivity(intent);
+                    break;
+            }
+        }
+    };
 }
 

@@ -97,10 +97,11 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
     }
 
     private void initToolBar() {
-        mtoolBar.inflateMenu(R.menu.menu_main);
+//        mtoolBar.inflateMenu(R.menu.menu_main);
         mtoolBar.setTitle(mContext.getResources().getString(R.string.topic_list_home));
         mtoolBar.setNavigationIcon(ContextCompat.getDrawable(this, R.drawable.ic_actionbar_menu));
         mtoolBar.setOverflowIcon(ContextCompat.getDrawable(this, R.drawable.ic_actionbar_menu_overflow));
+        mtoolBar.getOverflowIcon().setVisible(false, false);
     }
 
     @Override
@@ -157,10 +158,10 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
 
         if (type.equals(Constants.StoryType.STORY_HOME)) {
             mCommonFragment.themeId = id;
-            mtoolBar.getMenu().findItem(R.id.action_follow).setVisible(false);
-            mtoolBar.getMenu().findItem(R.id.action_notice).setVisible(true);
-            mtoolBar.getMenu().findItem(R.id.action_switch_model).setVisible(true);
-            mtoolBar.getMenu().findItem(R.id.action_config).setVisible(true);
+//            mtoolBar.getMenu().findItem(R.id.action_follow).setVisible(false);
+//            mtoolBar.getMenu().findItem(R.id.action_notice).setVisible(false);
+//            mtoolBar.getMenu().findItem(R.id.action_switch_model).setVisible(true);
+//            mtoolBar.getMenu().findItem(R.id.action_config).setVisible(true);
             mtoolBar.hideOverflowMenu();
             mtoolBar.setTitle(title);
 
@@ -170,10 +171,10 @@ public class MainActivity extends BaseFrameActivity<DrawerMainPresenter, DrawerM
             }
         } else {
             mListFragment.themeId = id;
-            mtoolBar.getMenu().findItem(R.id.action_follow).setVisible(true);
-            mtoolBar.getMenu().findItem(R.id.action_notice).setVisible(false);
-            mtoolBar.getMenu().findItem(R.id.action_switch_model).setVisible(false);
-            mtoolBar.getMenu().findItem(R.id.action_config).setVisible(false);
+//            mtoolBar.getMenu().findItem(R.id.action_follow).setVisible(false);
+//            mtoolBar.getMenu().findItem(R.id.action_notice).setVisible(false);
+//            mtoolBar.getMenu().findItem(R.id.action_switch_model).setVisible(false);
+//            mtoolBar.getMenu().findItem(R.id.action_config).setVisible(false);
             mtoolBar.showOverflowMenu();
             mtoolBar.setTitle(title);
 

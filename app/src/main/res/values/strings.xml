@@ -16,6 +16,12 @@
     <string name="action_comment">评论</string>
     <string name="action_praise">点赞</string>
 
+    <string name="baidu_uri">百度云地址</string>
+    <string name="baidu_pwd">百度云密码：</string>
+    <string name="magnet_uri">磁力链接</string>
+    <string name="torrent">种子下载</string>
+    <string name="download_title">下载地址</string>
+
     <string name="topic_list_home">首页</string>
 
     <string name="login_with_weibo">使用微博登录</string>
@@ -26,4 +32,6 @@
     <string name="editor_in_chief">主编</string>
     <string name="list_fragment_last_page">已是最后一页</string>
     <string name="loading_view_text">正在努力加载数据</string>
+
+    <string name="download_url">下载地址</string>
 </resources>

@@ -5,7 +5,6 @@
              android:layout_height="match_parent"
              android:background="@color/colorDayWindowBackground">
 
-    <include layout="@layout/loading_view"/>
 
     <com.iliubei.android.ui.list.SwipeRefreshLoadMoreLayout
         android:id="@+id/swipe_layout"

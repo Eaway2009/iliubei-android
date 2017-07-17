@@ -2,6 +2,7 @@ package com.iliubei.android.ui.list;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.View;
 import android.widget.ListView;
 
 import com.iliubei.android.R;
@@ -88,30 +89,30 @@ public class ListFragment extends BaseFrameFragment<ListPresenter, ListModel> im
 
     @Override
     public <T> void refreshList(T t) {
+        mSwipeRefresh.setRefreshing(false);
+        mSwipeRefresh.setLoading(false);
+
         mArticleList.clear();
         ArticleListEntity themeContentListEntity = (ArticleListEntity) t;
-        page = 2;
         mArticleList.addAll(themeContentListEntity.getArticles());
         mArticleListAdapter.setDataList(mArticleList);
         mArticleListAdapter.notifyDataSetChanged();
-
-        mSwipeRefresh.setRefreshing(false);
-        mSwipeRefresh.setLoading(false);
+        page = 2;
     }
 
     @Override
     public <T> void loadedList(T t) {
+        mSwipeRefresh.setRefreshing(false);
+        mSwipeRefresh.setLoading(false);
+
         ArticleListEntity themeContentListEntity = (ArticleListEntity) t;
         if (themeContentListEntity.getArticles() == null || themeContentListEntity.getArticles().size() < 1) {
             ToastUtils.showToast(getActivity(), getString(R.string.list_fragment_last_page));
             return;
         }
-        page++;
         mArticleList.addAll(themeContentListEntity.getArticles());
         mArticleListAdapter.setDataList(mArticleList);
         mArticleListAdapter.notifyDataSetChanged();
-
-        mSwipeRefresh.setRefreshing(false);
-        mSwipeRefresh.setLoading(false);
+        page++;
     }
 }

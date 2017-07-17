@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.iliubei.android">
+          package="com.iliubei.android"
+          android:installLocation="auto">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -31,6 +32,10 @@
         <activity android:name=".ui.editor.EditorListActivity">
         </activity>
         <activity android:name=".ui.editor.EditorDetailActivity">
+        </activity>
+        <activity android:name=".ui.detail.DownloadActivity">
+        </activity>
+        <activity android:name=".ui.detail.WebActivity">
         </activity>
     </application>
 

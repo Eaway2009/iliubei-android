@@ -140,19 +140,24 @@ public class SwipeRefreshLoadMoreLayout extends SwipeRefreshLayout {
     public void setLoading(boolean loading) {
         // 修改当前的状态
         isLoading = loading;
-        if (isLoading) {
-            // 显示布局
-            mListView.addFooterView(mFooterView);
-        } else {
-            // 隐藏布局
-            mListView.removeFooterView(mFooterView);
+        if(mListView!=null) {
+            if (isLoading) {
+                // 显示布局
+                mListView.addFooterView(mFooterView);
+            } else {
+                // 隐藏布局
+                mListView.removeFooterView(mFooterView);
 
-            // 重置滑动的坐标
-            mDownY = 0;
-            mUpY = 0;
+                // 重置滑动的坐标
+                mDownY = 0;
+                mUpY = 0;
+            }
         }
     }
-
+    public void setLoadingStatus(boolean loading) {
+        // 修改当前的状态
+        isLoading = loading;
+    }
 
     /**
      * 设置ListView的滑动监听

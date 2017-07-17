@@ -67,6 +67,10 @@ public class StoryContentEntity {
         private String description;
         private int typeid;
         private int id;
+        private String bdyurl;
+        private String bdypas;
+        private String cili;
+        private String zhongzi;
 
         public String getBody() {
             return body;
@@ -131,5 +135,38 @@ public class StoryContentEntity {
         public void setId(int id) {
             this.id = id;
         }
+
+        public String getBdyurl() {
+            return bdyurl;
+        }
+
+        public void setBdyurl(String bdyurl) {
+            this.bdyurl = bdyurl;
+        }
+
+        public String getBdypas() {
+            return bdypas;
+        }
+
+        public void setBdypas(String bdypas) {
+            this.bdypas = bdypas;
+        }
+
+        public String getCili() {
+            return cili;
+        }
+
+        public void setCili(String cili) {
+            this.cili = cili;
+        }
+
+        public String getZhongzi() {
+            return zhongzi;
+        }
+
+        public void setZhongzi(String zhongzi) {
+            this.zhongzi = zhongzi;
+        }
+
     }
 }
